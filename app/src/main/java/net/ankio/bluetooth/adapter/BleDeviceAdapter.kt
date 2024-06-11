@@ -12,12 +12,18 @@ import net.ankio.bluetooth.databinding.ItemBluetoothBinding
  */
 class BleDeviceAdapter(data: MutableList<BleDevice>? = null) :
     ViewBindingAdapter<ItemBluetoothBinding, BleDevice>(data) {
-    @SuppressLint("SetTextI18n")
-    override fun convert(holder: ViewBindingHolder<ItemBluetoothBinding>, item: BleDevice) {
+    override fun onBindViewHolder(
+        holder: ViewBindingHolder<ItemBluetoothBinding>,
+        position: Int,
+        item: BleDevice?
+    ) {
         val binding = holder.vb
-        binding.tvDeviceName.text = item.company
-        binding.tvMacAddress.text = item.address
-        binding.tvData.text = item.data
-        binding.tvRssi.text = "${item.rssi} dBm"
-    }
+        if (item != null) {
+            binding.tvDeviceName.text = item.company
+            binding.tvMacAddress.text = item.address
+            binding.tvData.text = item.data
+            binding.tvRssi.text = "${item.rssi} dBm"
+        }
+        }
+
 }

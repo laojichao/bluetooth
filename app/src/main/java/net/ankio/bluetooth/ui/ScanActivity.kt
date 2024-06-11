@@ -20,7 +20,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.marginBottom
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.chad.library.adapter.base.BaseQuickAdapter.AnimationType
+import com.chad.library.adapter4.BaseQuickAdapter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.permissionx.guolindev.PermissionX
@@ -148,7 +148,7 @@ class ScanActivity : BaseActivity() {
                 startActivity(Intent(this@ScanActivity, MainActivity::class.java))
             }
             animationEnable = true
-            setAnimationWithDefault(AnimationType.SlideInRight)
+            setItemAnimation(BaseQuickAdapter.AnimationType.SlideInRight)
             setOnItemLongClickListener{ adapter, _, position ->
                 if (mList!=historyList) return@setOnItemLongClickListener false
                 adapter.notifyItemRemoved(position)
