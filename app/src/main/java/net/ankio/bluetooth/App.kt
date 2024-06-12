@@ -4,11 +4,14 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import android.text.TextUtils
+import android.widget.Toast
 import com.flurry.android.FlurryAgent
 import com.quickersilver.themeengine.ThemeEngine
+import net.ankio.bluetooth.utils.HookUtils
 import net.ankio.bluetooth.utils.LocaleDelegate
 import net.ankio.bluetooth.utils.SpUtils
 import java.util.*
+import kotlin.system.exitProcess
 
 
 open class App : Application() {
